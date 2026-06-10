@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - English Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>📝 Register Account</h1>
+
+    <input type="text" id="regName" placeholder="English Name">
+    <br><br>
+    <input type="password" id="regPass" placeholder="Password">
+    <br><br>
+    <button onclick="register()">Register</button>
+
+    <p id="message"></p>
+    <p>Already have account? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+function register(){
+    const name = document.getElementById("regName").value;
+    const pass = document.getElementById("regPass").value;
+
+    if(!name || !pass){
+        document.getElementById("message").innerText = "Fill all fields!";
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    if(users.find(u => u.name === name)){
+        document.getElementById("message").innerText = "Name already used!";
+        return;
+    }
+
+    users.push({name: name, pass: pass, score: 0});
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("Register success!");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

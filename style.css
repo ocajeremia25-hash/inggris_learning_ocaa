@@ -1,0 +1,49 @@
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #667eea;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #4c5fd7;
+}
+
+#answers button {
+    display: block;
+    width: 100%;
+}
+
+textarea {
+    width: 90%;
+    height: 80px;
+    padding: 10px;
+    border-radius: 8px;
+}

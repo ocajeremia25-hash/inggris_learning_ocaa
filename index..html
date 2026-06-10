@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>English Quiz Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container"></div>
+
+
+    <h3 id="welcome"></h3>
+    <button onclick="logout()">Logout</button>
+
+    
+    <center><h1>🎓 English Quiz Pro</h1></center>
+
+    <div id="quiz-box">
+        <img id="question-image" src="">
+        <h2 id="question"></h2>
+        <div id="answers"></div>
+        <p id="result"></p>
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div class="score-box">
+        <h3>Score: <span id="score">0</span></h3>
+    </div>
+
+    <hr>
+
+    <h2>🌍 English Translator</h2>
+    <textarea id="translate-input" placeholder="Type English here..."></textarea>
+    <button onclick="translateText()">Translate</button>
+    <p id="translate-result"></p>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

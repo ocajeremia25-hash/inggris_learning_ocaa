@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - English Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🔐 Login English Quiz</h1>
+
+    <input type="text" id="loginName" placeholder="English Name">
+    <br><br>
+    <input type="password" id="loginPass" placeholder="Password">
+    <br><br>
+    <button onclick="login()">Login</button>
+
+    <p id="message"></p>
+    <p>Don't have account? <a href="register.html">Register</a></p>
+</div>
+
+<script>
+function login(){
+    const name = document.getElementById("loginName").value;
+    const pass = document.getElementById("loginPass").value;
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const user = users.find(u => u.name === name && u.pass === pass);
+
+    if(!user){
+        document.getElementById("message").innerText = "Wrong name or password!";
+        return;
+    }
+
+    localStorage.setItem("currentUser", name);
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
